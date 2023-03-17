@@ -5,7 +5,7 @@ public class Fila {
     public Fila(){
         this.refNoEntradaFila = null;
     }
-
+    
     public void enqueue(No novoNo){
         novoNo.setRefNo(refNoEntradaFila);
         refNoEntradaFila = novoNo;
