@@ -1,32 +1,42 @@
-public class No {
+public class No<T>{
 
-    private int dado;
-    private No refNo = null;
+    private T conteudo;
+    private No<T> proximoNo;
 
-    public No(int dado){
-        this.dado = dado;
+    public No(){
+        this.proximoNo = null;
     }
 
-    public int getDado(){
-        return dado;
+    public No(T conteudo){
+        this.proximoNo = null;
+        this.conteudo = conteudo;
     }
 
-    public void setDado(int dado){
-        this.dado = dado;
+    public No(T conteudo, No<T> proximoNo){
+        this.conteudo = conteudo;
+        this.proximoNo = proximoNo;
     }
 
-    public No getRefNo(){
-        return refNo;
+    public T getConteudo(){
+        return conteudo;
     }
 
-    public void setRefNo(No refNo){
-        this.refNo = refNo;
+    public void setConteudo(T conteudo){
+        this.conteudo = conteudo;
+    }
+
+    public No<T> getProximoNo(){
+        return proximoNo;
+    }
+
+    public void setProximoNo(No<T> proximoNo){
+        this.proximoNo = proximoNo;
     }
 
     @Override
     public String toString(){
         return "No{" +
-                "dado=" + dado +
+                "conteudo=" + conteudo +
                 '}';
     }
 }

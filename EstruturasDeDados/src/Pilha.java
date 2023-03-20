@@ -1,26 +1,26 @@
-public class Pilha {
+public class Pilha<T> {
 
-    private No refNoEntradaPilha;
+    private No<T> refNoEntradaPilha;
 
     public Pilha(){
         this.refNoEntradaPilha = null;
     }
 
-    public void push(No novoNo){
-        No refAuxiliar = refNoEntradaPilha;
+    public void push(No<T> novoNo){
+        No<T> refAuxiliar = refNoEntradaPilha;
         refNoEntradaPilha = novoNo;
-        refNoEntradaPilha.setRefNo(refAuxiliar);
+        refNoEntradaPilha.setProximoNo(refAuxiliar);
     }
 
-    public No pop(){
+    public No<T> pop(){
         if(!isEmpty()){
-            No noPoped = refNoEntradaPilha;
-            refNoEntradaPilha = refNoEntradaPilha.getRefNo();
+            No<T> noPoped = refNoEntradaPilha;
+            refNoEntradaPilha = refNoEntradaPilha.getProximoNo();
             return noPoped;
         }
         return null;
     }
-    public No top(){
+    public No<T> top(){
         return refNoEntradaPilha;
     }
 

@@ -1,35 +1,35 @@
-public class Fila {
+public class Fila<T> {
 
-    private No refNoEntradaFila;
+    private No<T> refNoEntradaFila;
 
     public Fila(){
         this.refNoEntradaFila = null;
     }
     
-    public void enqueue(No novoNo){
-        novoNo.setRefNo(refNoEntradaFila);
+    public void enqueue(No<T> novoNo){
+        novoNo.setProximoNo(refNoEntradaFila);
         refNoEntradaFila = novoNo;
     }
 
-    public No dequeue(){
+    public No<T> dequeue(){
         if(!this.isEmpty()){
-            No primeiroNo = refNoEntradaFila;
-            No noAuxiliar = refNoEntradaFila;
-            while(primeiroNo.getRefNo() != null){
+            No<T> primeiroNo = refNoEntradaFila;
+            No<T> noAuxiliar = refNoEntradaFila;
+            while(primeiroNo.getProximoNo() != null){
                 noAuxiliar = primeiroNo;
-                primeiroNo = primeiroNo.getRefNo();
+                primeiroNo = primeiroNo.getProximoNo();
             }
-            noAuxiliar.setRefNo(null);
+            noAuxiliar.setProximoNo(null);
             return primeiroNo;
         }
         return null;
     }
 
-    public No first(){
+    public No<T> first(){
         if(!this.isEmpty()){
-            No primeiroNo = refNoEntradaFila;
-            while(primeiroNo.getRefNo() != null){
-                primeiroNo = primeiroNo.getRefNo();
+            No<T> primeiroNo = refNoEntradaFila;
+            while(primeiroNo.getProximoNo() != null){
+                primeiroNo = primeiroNo.getProximoNo();
             }
             return primeiroNo;
         }
@@ -44,12 +44,12 @@ public class Fila {
     @Override
     public String toString(){
         String stringRetorno = "";
-        No noAuxiliar = refNoEntradaFila;
+        No<T> noAuxiliar = refNoEntradaFila;
 
         if(refNoEntradaFila != null){
-            stringRetorno += "[No{objeto=" + noAuxiliar.getDado() + "}]--->";
-            while(noAuxiliar.getRefNo() != null){
-                noAuxiliar = noAuxiliar.getRefNo();
+            stringRetorno += "[No{objeto=" + noAuxiliar.getConteudo() + "}]--->";
+            while(noAuxiliar.getProximoNo() != null){
+                noAuxiliar = noAuxiliar.getProximoNo();
             }
             stringRetorno += "null";
         }else{
