@@ -86,7 +86,7 @@ public class ListaDuplamenteEncadeada<T> {
 
         NoDuplo<T> noAuxiliar = primeiroNo;
         for(int i = 0; i < size(); i++){
-            strRetorno += "[No{conteudo =" + noAuxiliar + "}]--->";
+            strRetorno += "[No{conteudo = " + noAuxiliar + "}]--->";
             noAuxiliar = noAuxiliar.getNoProximo();
         }
         strRetorno += "null";

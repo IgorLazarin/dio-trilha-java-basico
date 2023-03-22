@@ -74,7 +74,7 @@ public class ListaEncadeada<T> {
         String strRetorno = "";
         No<T> noAux = refEntrada;
         for(int i = 0; i < this.size(); i++){
-            strRetorno += "[No{conteudo=" + noAux.getConteudo() + "}]--->";
+            strRetorno += "[No{conteudo = " + noAux.getConteudo() + "}]--->";
             noAux = noAux.getProximoNo();
         }
         strRetorno += "null";

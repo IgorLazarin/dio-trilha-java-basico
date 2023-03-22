@@ -47,7 +47,7 @@ public class Fila<T> {
         No<T> noAuxiliar = refNoEntradaFila;
 
         if(refNoEntradaFila != null){
-            stringRetorno += "[No{objeto=" + noAuxiliar.getConteudo() + "}]--->";
+            stringRetorno += "[No{conteudo = " + noAuxiliar.getConteudo() + "}]--->";
             while(noAuxiliar.getProximoNo() != null){
                 noAuxiliar = noAuxiliar.getProximoNo();
             }
