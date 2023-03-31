@@ -41,9 +41,11 @@ public class Main {
         devIgor.setNome("Igor");
         devIgor.inscreverBootcamp(bootcamp);
         System.out.println("Conteúdos Inscritos Igor:" + devIgor.getConteudosInscritos());
+
         devIgor.progredir();
         devIgor.progredir();
         devIgor.progredir();
+        
         System.out.println("-");
         System.out.println("Conteúdos Inscritos Igor:" + devIgor.getConteudosInscritos());
         System.out.println("Conteúdos Concluidos Igor:" + devIgor.getConteudosConcluidos());
